@@ -106,7 +106,7 @@ function renderSatellites(satellites) {
 		const satelliteElement = document.createElement('div');
 		satelliteElement.classList.add('satellite');
 		satelliteElement.innerHTML = `
-      <p>ID: ${satelliteId}</p>
+      <h3>ID: ${satelliteId}</h3>
       <p>Country: ${satelliteCountry}</p>
       <p>Launch Date: ${satelliteLaunchDate}</p>
     `;

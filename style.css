@@ -18,6 +18,10 @@ body {
 	background-repeat: no-repeat;
 	background-attachment: fixed;
 }
+input:focus {
+	outline: none;
+	color: blacks;
+}
 /* navbar */
 
 .navbar {
@@ -25,7 +29,8 @@ body {
 	justify-content: space-between;
 	align-items: center;
 	background-color: transparent;
-	color: #fff;
+	color: #ffffffe7;
+
 	padding: 10px;
 }
 
@@ -49,7 +54,7 @@ body {
 }
 
 .nav-links a {
-	color: #fff;
+	color: #ffffffe7;
 	text-decoration: none;
 	font-size: 1rem;
 	font-weight: bold;
@@ -85,7 +90,6 @@ body {
 
 .card {
 	box-shadow: rgba(21, 17, 227, 0.354) 0px 5px 15px;
-	/* border: 1px solid #ccc; */
 	background-color: rgb(15, 14, 15);
 	padding: 20px;
 	border-radius: 5px;
@@ -105,11 +109,10 @@ body {
 #spacecrafts {
 	margin-top: 50px;
 	margin-bottom: 20px;
-	border: 1px solid #ddd;
 	border-radius: 5px;
-	padding: 10px;
+	padding: 20px;
 	display: grid;
-	grid-template-columns: 1fr 1fr 1fr 1fr;
+	grid-template-columns: 1fr 1fr 1fr;
 	flex-direction: column;
 	align-items: center;
 }
@@ -119,15 +122,17 @@ body {
 	margin: 10px;
 	font-size: 1.1rem;
 	padding: 15px;
-	border: 1px solid #ddd;
 	border-radius: 5px;
 	text-align: center;
+	box-shadow: rgba(21, 17, 227, 0.354) 0px 5px 15px;
+	background-color: rgb(15, 14, 15);
+	padding: 20px;
+	border-radius: 5px;
 }
 
 /* Launcher section */
 #launchers-container {
 	display: grid;
-
 	grid-template-columns: 1fr 1fr 1fr 1fr;
 	padding: 10px;
 	margin-bottom: 10px;
@@ -135,25 +140,31 @@ body {
 #launchers-container div {
 	font-size: 1.1rem;
 	padding: 15px;
-	border: 1px solid #ddd;
+	text-align: center;
+	box-shadow: rgba(21, 17, 227, 0.354) 0px 5px 15px;
+	background-color: rgb(15, 14, 15);
+	padding: 30px;
+	width: 9rem;
 	border-radius: 5px;
 	text-align: center;
 	margin: 0 auto;
 }
 
+/* Businness section */
 .satellite {
 	border: 1px solid black;
-	padding: 10px;
+	padding: 20px;
 	margin: 10px;
 	box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-	border: 1px solid #ccc;
+	box-shadow: rgba(21, 17, 227, 0.354) 0px 5px 15px;
+	background-color: rgb(15, 14, 15);
 }
 
 #satellites-container {
 	display: grid;
 	grid-template-columns: 1fr 1fr 1fr 1fr;
 	margin-bottom: 20px;
-	border: 1px solid #ddd;
+	/* border: 1px solid #ddd; */
 	border-radius: 5px;
 	padding: 10px;
 	align-items: center;
@@ -165,4 +176,7 @@ body {
 	/* border: 2px solid red; */
 	flex-direction: row;
 	text-align: center;
+}
+#satellites-container h3 {
+	color: #f778ff;
 }
