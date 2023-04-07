@@ -92,6 +92,7 @@ body {
 
 /* spacecraft section */
 #spacecrafts {
+	margin-top: 50px;
 	margin-bottom: 20px;
 	border: 1px solid #ddd;
 	border-radius: 5px;
@@ -103,43 +104,38 @@ body {
 }
 
 #spacecrafts h2 {
-	/* border: 2px solid red; */
-	height: 3rem;
-	margin: 0;
+	height: 5rem;
+	margin: 10px;
+	font-size: 1.1rem;
+	padding: 15px;
+	border: 1px solid #ddd;
+	border-radius: 5px;
 	text-align: center;
 }
 
-#spacecrafts img {
-	max-width: 100%;
-	height: auto;
-	margin: 10px 0;
-}
-.spacecrafts h1 {
-	margin-top: 20px;
-	margin-bottom: 20px;
-	text-align: center;
-}
-#spacecrafts p {
-	margin: 0;
-	text-align: justify;
-	line-height: 1.5;
-}
-.centre {
-	border: 1px solid black;
-	padding: 10px;
-	margin-bottom: 10px;
-}
+/* Launcher section */
+#launchers-container {
+	display: grid;
 
-.launcher {
-	border: 1px solid black;
+	grid-template-columns: 1fr 1fr 1fr 1fr;
 	padding: 10px;
 	margin-bottom: 10px;
+}
+#launchers-container div {
+	font-size: 1.1rem;
+	padding: 15px;
+	border: 1px solid #ddd;
+	border-radius: 5px;
+	text-align: center;
+	margin: 0 auto;
 }
 
 .satellite {
 	border: 1px solid black;
 	padding: 10px;
-	margin-bottom: 10px;
+	margin: 10px;
+	box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+	border: 1px solid #ccc;
 }
 
 #satellites-container {
@@ -150,4 +146,12 @@ body {
 	border-radius: 5px;
 	padding: 10px;
 	align-items: center;
+}
+.satelite-center {
+	background: #f4f4f4;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	/* border: 2px solid red; */
+	flex-direction: row;
+	text-align: center;
 }

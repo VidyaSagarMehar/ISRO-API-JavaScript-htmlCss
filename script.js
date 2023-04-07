@@ -1,6 +1,7 @@
 const searchInput = document.getElementById('state');
 const centresContainer = document.querySelector('.centres');
 
+// fetch centers data
 fetch('https://isro.vercel.app/api/centres')
 	.then((response) => response.json())
 	.then((data) => {
@@ -32,46 +33,40 @@ fetch('https://isro.vercel.app/api/centres')
 		displayCentres();
 	});
 
+// request for spacecrafts
+fetch('https://isro.vercel.app/api/spacecrafts')
+	.then((response) => response.json())
+	.then((data) => {
+		const spacecrafts = data.spacecrafts;
+		const spacecraftsDiv = document.getElementById('spacecrafts');
+
+		spacecrafts.forEach((spacecraft) => {
+			const section = document.createElement('section');
+			const heading = document.createElement('h2');
+			heading.textContent = spacecraft.name;
+			section.appendChild(heading);
+
+			spacecraftsDiv.appendChild(section);
+		});
+	})
+	.catch((error) => console.error(error));
+
 // requwest to get launchers
 fetch('https://isro.vercel.app/api/launchers')
 	.then((response) => response.json())
 	.then((data) => {
 		const launchers = data.launchers;
-		const launsec = document.getElementById('launchers');
+		const launchersContainer = document.getElementById('launchers-container');
 		launchers.forEach((launcher) => {
-			const section = document.createElement('section');
-			const heading = document.createElement('h2');
-
-			heading.textContent = launcher.id;
-
-			section.appendChild(heading);
-			launsec.appendChild(section);
+			const launcherId = launcher.id;
+			const launcherElement = document.createElement('div');
+			launcherElement.textContent = launcherId;
+			launchersContainer.appendChild(launcherElement);
 		});
 	})
 	.catch((error) => console.error(error));
 
-// // request for customers staelites
-// fetch('https://isro.vercel.app/api/customer_satellites')
-// 	.then((response) => response.json())
-// 	.then((data) => {
-// 		const satellites = data.customer_satellites;
-// 		const satellitesContainer = document.getElementById('satellites-container');
-// 		satellites.forEach((satellite) => {
-// 			const satelliteId = satellite.id;
-// 			const satelliteCountry = satellite.country;
-// 			const satelliteLaunchDate = satellite.launch_date;
-// 			const satelliteElement = document.createElement('div');
-// 			satelliteElement.classList.add('satellite');
-// 			satelliteElement.innerHTML = `
-//         <p>ID: ${satelliteId}</p>
-//         <p>Country: ${satelliteCountry}</p>
-//         <p>Launch Date: ${satelliteLaunchDate}</p>
-//       `;
-// 			satellitesContainer.appendChild(satelliteElement);
-// 		});
-// 	})
-// 	.catch((error) => console.error(error));
-
+// fetchsatelite data
 // Fetch the satellite data
 fetch('https://isro.vercel.app/api/customer_satellites')
 	.then((response) => response.json())
@@ -118,46 +113,3 @@ function renderSatellites(satellites) {
 		satellitesContainer.appendChild(satelliteElement);
 	});
 }
-
-// // Fetch the launcher data
-// fetch('https://isro.vercel.app/api/launchers')
-// 	.then((response) => response.json())
-// 	.then((data) => {
-// 		const launchers = data.launchers;
-// 		const launchersContainer = document.getElementById('launchers-container');
-
-// 		// Render the initial list of launchers
-// 		renderLaunchers(launchers);
-
-// 		// Add an event listener to the search input field
-// 		const searchInput = document.getElementById('launcher-search');
-// 		searchInput.addEventListener('input', (event) => {
-// 			// Get the search query from the input field
-// 			const query = event.target.value.trim().toLowerCase();
-
-// 			// Filter the launcher data based on the search query
-// 			const filteredLaunchers = launchers.filter((launcher) => {
-// 				const id = launcher.id.toLowerCase();
-// 				return id.includes(query);
-// 			});
-
-// 			// Render the filtered list of launchers
-// 			renderLaunchers(filteredLaunchers);
-// 		});
-// 	})
-// 	.catch((error) => console.error(error));
-
-// function renderLaunchers(launchers) {
-// 	const launchersContainer = document.getElementById('launchers-container');
-// 	launchersContainer.innerHTML = '';
-
-// 	launchers.forEach((launcher) => {
-// 		const launcherId = launcher.id;
-// 		const launcherElement = document.createElement('div');
-// 		launcherElement.classList.add('launcher');
-// 		launcherElement.innerHTML = `
-//       <p>ID: ${launcherId}</p>
-//     `;
-// 		launchersContainer.appendChild(launcherElement);
-// 	});
-// }
